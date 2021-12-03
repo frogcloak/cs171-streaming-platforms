@@ -1,0 +1,86 @@
+.title {
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.buffer {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.buffer-survey {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+p {
+    color: #6a6a6a;
+    font-family: "Bai Jamjuree", sans-serif;
+}
+
+#fp-nav ul:hover .fp-tooltip{
+    color: #6a6a6a;
+    font-family: "Bai Jamjuree", sans-serif;
+}
+
+.boxed-text {
+    border-radius: 1.6em;
+    border: 3px solid #b58659;
+    padding: .9em;
+    font-size: 1.3em;
+}
+
+.form-title {
+    font-family: "Bai Jamjuree", sans-serif;
+    text-align: center;
+    font-size: 2.2em;
+    padding-bottom: .9em;
+}
+
+.img-fluid {
+    max-width: 90%;
+}
+
+hr {
+    border-top: solid #b58659;
+    margin-left: 0.9em;
+    margin-right: 0.9em;
+}
+
+.surveyQ {
+    color: black;
+}
+
+#survey-result p {
+    color: black;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+#survey-msg {
+    border-radius: 1.6em;
+    border: 3px solid #b58659;
+    padding: .2em;
+    background-color: #fcf6ef;
+}
+
+.btn-primary {
+    background-color: #fcf6ef;
+    border-color: #b58659;
+    color: black;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.btn-primary:hover {
+    background-color: #b58659;
+    border-color: #fcf6ef;
+    color: #fcf6ef;
+}
+
+/*--------------------------------------------------------------*/
