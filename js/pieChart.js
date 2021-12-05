@@ -5,7 +5,7 @@
 loadPie();
 
 function loadPie() {
-    d3.csv("https://github.com/frogcloak/cs171-streaming-platforms/blob/main/data/all_count.csv"). then(csv=>{
+    d3.csv("data/all_count.csv"). then(csv=>{
 
         // prepare data
         let data = csv
@@ -85,7 +85,7 @@ class PieChart {
 
         // Pie chart settings
         let minScale = Math.min(vis.height, vis.width)
-        vis.rScale.range([minScale * 0.2, minScale * 0.38])
+        vis.rScale.range([minScale * 0.2, minScale * 0.39])
 
         vis.outerRadius = vis.rScale(vis.data.total);
         vis.innerRadius = 0; //TODO: double check
@@ -134,23 +134,17 @@ class PieChart {
         let vis = this
 
         vis.displayData = []
-        vis.rankedKeys = []
 
         vis.key.forEach(function (d) {
             vis.displayData.push(vis.data[d]);
         });
 
-        vis.displayData.forEach(function (d) {
-            vis.rankedKeys.push(Object.keys(vis.key).find(key => vis.key[key] === parseInt(d)))
-        })
-
         if (vis.key.length === 1){
             vis.displayData.push((vis.data.total - vis.data[vis.key[0]]).toString());
-            vis.rankedKeys.push(vis.not_lab)
         }
 
-        console.log(vis.displayData)
-        console.log(vis.rankedKeys)
+        // console.log(vis.displayData)
+        // console.log(vis.rankedKeys)
 
         vis.updateVis()
     }
@@ -163,26 +157,40 @@ class PieChart {
         vis.arcs = vis.pieChartGroup.selectAll(".arc")
             .data(vis.pie(vis.displayData))
 
+        vis.displayColor = {}
+
         vis.rest = 0;
-        vis.displayColor = []
         if (vis.key.length === 1) {
             vis.rest = vis.data.total;
-            vis.displayColor = vis.grayColors.slice(2,4)
+            vis.displayColor[vis.key[0]] = vis.grayColors[2];
+            vis.displayColor[vis.not_lab] = vis.grayColors[4];
         }
         else {
-            vis.rest = vis.displayData.reduce((a,b) => parseInt(a)+parseInt(b))
-            vis.displayColor = vis.grayColors.slice(1,4)
+            vis.rest = vis.displayData.reduce((a,b) => parseInt(a)+parseInt(b));
+
+            for (let i=0; i<vis.key.length; i++) {
+                let d = vis.key[i];
+                console.log(d);
+                vis.displayColor[d] = vis.grayColors[i+1]
+            }
+
         }
+
+        vis.keytips = vis.key.concat([vis.not_lab])
+        console.log(vis.keytips)
 
         // Append paths
         vis.arcs.enter()
             .append("path")
             .attr("d", vis.arc)
-            .attr("fill",function(d) {return vis.displayColor[d.index]})
+            .attr("fill",function(d) {
+                return vis.displayColor[Object.keys(vis.data).find(key => (vis.data[key] === d.data) & vis.keytips.includes(key))]
+            })
             .merge(vis.arcs)
             .on('mouseover', function(event, d){
                 d3.select(this)
                     .attr('fill', vis.platformColors[vis.data.platform])
+                console.log(d)
 
                 vis.tooltip
                     .style("opacity", 1)
@@ -190,14 +198,16 @@ class PieChart {
                     .style("top", event.pageY + "px")
                     .html(`
                 <div style="border: thin solid grey; border-radius: 5px; background: #fcf6ef; padding: .5em">
-                     <p class="pie-tool-title"> ${vis.rankedKeys[d.index]} <\p>
+                     <p class="pie-tool-title"> ${Object.keys(vis.data).find(key => (vis.data[key] === d.data) & vis.keytips.includes(key))} <\p>
                      <p class="pie-tool-content"> Count: ${d.value}<br>      
                      Percentage: ${(d.value / vis.rest * 100).toFixed(1)}%</p>                         
                 </div>`);
             })
             .on('mouseout', function(event, d){
                 d3.select(this)
-                    .attr('fill', function(d) {return vis.displayColor[d.index]})
+                    .attr('fill', function(d) {
+                        return vis.displayColor[Object.keys(vis.data).find(key => (vis.data[key] === d.data) & vis.key.includes(key))]
+                    })
 
                 vis.tooltip
                     .style("opacity", 0)
