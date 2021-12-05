@@ -16,5 +16,4 @@ d3.csv("data/.csv").then(data => {
 
     areachart = new AreaChart("area-chart", countDataByDay);
 
-
 });
