@@ -91,14 +91,53 @@
 
             <!--    Content dashboard    -->
             <div class="row section" id="contentDashboard">
-                <div class="row form-title" style="height: 5vh">Overview of Platform Content<hr></div>
-                <div class="row" style="height: 30vh">
-                    <div class="col" id=""></div>
-                    <div class="col" style="margin-left: 2.5%" id="rec-q" data-aos="fade-in"></div>
-                    <div class="col"></div>
+                <div style="height: 10vh">
+                    <div class="form-title">Overview of Platform Content<hr></div>
                 </div>
-                <div class="row" style="height:30vh">
-                    <div id="rec-result" data-aos="fade-in"></div>
+                <div style="height: 2vh"></div>
+                <div class="row" id="typePie" style="height: 40vh">
+                    <div class="col-3">
+                        <div class="text-left buffer">
+                            <h4 style="margin-left: 1%">Movies vs. TV Shows</h4>
+                            <p data-aos="fade-down" data-aos-duration="500" data-aos-delay="-1000" class="boxed-text chart-des" style="margin-left: 1%">
+                                <strong style="text-decoration: underline">Insights: </strong><br>
+                                1. Amazon Prime Video and Netflix have far more content overall<br>
+                                2. Hulu is the only one with a relatively equal distribution of movies and TV shows<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="row" style="height: 100%">
+                            <div class="col-2" id="typePrime" data-aos="fade-in" data-aos-duration="500"></div>
+                            <div class="col-2" id="typeNetflix" data-aos="fade-in" data-aos-duration="500"></div>
+                            <div class="col-2" id="typeHulu" data-aos="fade-in" data-aos-duration="500"></div>
+                            <div class="col-2" id="typeDisney" data-aos="fade-in" data-aos-duration="500"></div>
+                            <div class="col-2" id="typeHBO" data-aos="fade-in" data-aos-duration="500"></div>
+                        </div>
+                    </div>
+                    <div class="form-title middle-line"><hr></div>
+                </div>
+                <div class="row" id="ratingPie" style="height: 40vh">
+                    <div class="col-3">
+                        <div class="text-left buffer">
+                            <h4 style="margin-left: 1%">PG Ratings</h4>
+                            <p data-aos="fade-down" data-aos-duration="500" data-aos-delay="-1000" class="boxed-text chart-des" style="margin-left: 1%">
+                                <strong style="text-decoration: underline">Insights: </strong><br>
+                                1. Disney+ does not have any mature content on the platform.<br>
+                                2. Hulu is the only one with a relatively equal distribution of movies and TV shows<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="row" style="height: 100%">
+                            <div class="col-2" id="ratingPrime" data-aos="fade-in" data-aos-duration="500"></div>
+                            <div class="col-2" id="ratingNetflix" data-aos="fade-in" data-aos-duration="500"></div>
+                            <div class="col-2" id="ratingHulu" data-aos="fade-in" data-aos-duration="500"></div>
+                            <div class="col-2" id="ratingDisney" data-aos="fade-in" data-aos-duration="500"></div>
+                            <div class="col-2" id="ratingHBO" data-aos="fade-in" data-aos-duration="500"></div>
+                        </div>
+                    </div>
+                    <div class="form-title"><hr></div>
                 </div>
             </div>
 
@@ -150,6 +189,7 @@
     <script src="js/main.js"></script>
     <script src="js/survey.js"></script>
     <script src="js/recommendation.js"></script>
+    <script src="js/pieChart.js"></script>
 
     <!-- Initialize Fullpage stepper-->
     <script>

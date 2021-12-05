@@ -35,10 +35,23 @@ p {
     font-size: 1.3em;
 }
 
+.boxed-text.chart-des {
+    border-radius: 0em;
+    border: none;
+    text-align: left;
+    align-self: center;
+    margin-top: 10%;
+    padding-left:.5em;
+    padding-right:.3em;
+    padding-bottom: .5em;
+    font-size: 1em;
+    background-color: #fcf6ef;
+}
+
 .form-title {
     font-family: "Bai Jamjuree", sans-serif;
     text-align: center;
-    font-size: 2.2em;
+    font-size: 5vh;
     padding-bottom: .9em;
 }
 
@@ -48,8 +61,16 @@ p {
 
 hr {
     border-top: solid #b58659;
-    margin-left: 0.9em;
-    margin-right: 0.9em;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.middle-line hr {
+    color: #3f3f3f;
+    border: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 1%;
 }
 
 .surveyQ {
@@ -83,4 +104,19 @@ hr {
     color: #fcf6ef;
 }
 
+.pie-title {
+    font-size: 1em;
+}
+
+.pie-tool-title {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.pie-tool-content {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: 1.1em;
+    color: #6a6a6a;
+}
 /*--------------------------------------------------------------*/

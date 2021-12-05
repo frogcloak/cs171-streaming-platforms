@@ -1,14 +1,67 @@
+// let pieHeight = document.getElementById('typePrime').clientHeight * 0.8;
+// let rScale = d3.scaleLinear()
+//     .range([pieHeight * 0.5, pieHeight]);
+
+loadPie();
+
+function loadPie() {
+    d3.csv("data/all_count.csv"). then(csv=>{
+
+        // prepare data
+        let data = csv
+        let rankedID = ["Prime", "Netflix", "Hulu", "Disney", "HBO"];
+        let types = [];
+        let genres = [];
+        let ratings = [];
+        rankedID.forEach(function(d) {
+            types.push("type"+d);
+            genres.push("genre"+d);
+            ratings.push("rating"+d)
+        })
+        let defaultGenres = ["Drama", "Drama", "Drama", "Comedy", "Drama"]
+
+        let rScale = d3.scaleLinear();
+        rScale.domain([Math.min.apply(Math, data.map(function(d) { return d.total; })),
+            Math.max.apply(Math, data.map(function(d) { return d.total; }))]);
+
+        data.forEach(function(d,i) {
+                new PieChart(types[i], d, ["movie"], rankedID[i], rScale, "TV show");
+                new PieChart(ratings[i], d, ["G/TV-G", "PG/TV-PG", "PG-13/TV-14", "R/TV-MA"], rankedID[i], rScale, "");
+            }
+        )
+
+
+    });
+}
+
+
+
+
 class PieChart {
 
     // constructor method to initialize Timeline object
-    constructor(parentElement, distData) {
+    constructor(parentElement, data, key, title, rScale, not_lab) {
         this.parentElement = parentElement;
-        this.data = distData;
-        this.grayColors = ['#6A6A6A', '#3C3C3C'];
+        this.data = data;
+        this.key = key;
+        this.title = title;
+        this.rScale = rScale;
+        this.not_lab = not_lab;
+        this.grayColors = ["#d9d9d9","#bdbdbd","#969696","#636363","#252525"];
         this.highlight = '#B58659'
         this.highlight2 = '#2b4d72'
-        this.platformColors = ['#B10000', '#3EEB94', '#FBAB3F', '#00D8EB', '#7A1FE0']
-        this.platformColors2 = ['#d86161', '#81ebb6', '#fbcb8a', '#81e2eb', '#81e2eb']
+        this.platformColors = {
+            "Netflix": "#CF3038",
+            "Hulu": '#62bc51',
+            "Prime Video":  '#faa223',
+            "Disney+": '#0279ad',
+            "HBO": '#bb2b77'}
+        this.platformColors2 = {
+            "Netflix": '#d87777',
+            "Hulu": '#81ebb6',
+            "Prime Video": '#fbcb8a',
+            "Disney+": '#81e2eb',
+            "HBO": '#caabeb'}
 
         // call initVis method
         this.initVis()
@@ -30,14 +83,28 @@ class PieChart {
             .append("g")
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
+        // Pie chart settings
+        let minScale = Math.min(vis.height, vis.width)
+        vis.rScale.range([minScale * 0.2, minScale * 0.38])
+
+        vis.outerRadius = vis.rScale(vis.data.total);
+        vis.innerRadius = 0; //TODO: double check
+
+        vis.svg.append('circle')
+            .attr('r', (vis.outerRadius * 1.08))
+            .attr('fill', vis.platformColors2[vis.data.platform])
+            .attr("transform", "translate(" + vis.width / 2 + "," + vis.height / 2 + ")");
+
         // add title
-        vis.svg.append('g')
-            .attr('class', 'title pie-title')
-            .append('text')
-            .text('Title for Pie Chart')
-            .attr('transform', `translate(${vis.width / 2}, 20)`)
-            .attr('text-anchor', 'middle')
-            .attr('class', 'pie-title')
+        if (vis.title !== "") {
+            vis.svg.append('g')
+                .attr('class', 'title pie-title')
+                .append('text')
+                .text(vis.data.platform)
+                .attr('transform', `translate(${vis.width / 2}, 20)`)
+                .attr('text-anchor', 'middle')
+                .attr('class', 'pie-title')
+        }
 
         // pie chart setup
         vis.pieChartGroup = vis.svg
@@ -47,10 +114,6 @@ class PieChart {
 
         // Define a default pie layout
         vis.pie = d3.pie();
-
-        // Pie chart settings
-        vis.outerRadius = vis.height / 2.5;
-        vis.innerRadius = vis.outerRadius * 0.6; //TODO: double check
 
         // Path generator for the pie segments
         vis.arc = d3.arc()
@@ -71,15 +134,23 @@ class PieChart {
         let vis = this
 
         vis.displayData = []
+        vis.rankedKeys = []
 
-        // generate random data
-        for (let i = 0; i < 4; i++) {
-            let random = Math.floor(Math.random() * 100)
-            vis.displayData.push({
-                value: random,
-                color: vis.color[i]
-            })
+        vis.key.forEach(function (d) {
+            vis.displayData.push(vis.data[d]);
+        });
+
+        vis.displayData.forEach(function (d) {
+            vis.rankedKeys.push(Object.keys(vis.key).find(key => vis.key[key] === parseInt(d)))
+        })
+
+        if (vis.key.length === 1){
+            vis.displayData.push((vis.data.total - vis.data[vis.key[0]]).toString());
+            vis.rankedKeys.push(vis.not_lab)
         }
+
+        console.log(vis.displayData)
+        console.log(vis.rankedKeys)
 
         vis.updateVis()
     }
@@ -88,44 +159,45 @@ class PieChart {
     updateVis() {
         let vis = this;
 
-        console.log(vis.displayData)
-
-        vis.data = []
-        vis.displayData.forEach(d => vis.data.push(d.value))
-
         // Bind data
         vis.arcs = vis.pieChartGroup.selectAll(".arc")
-            .data(vis.pie(vis.data))
+            .data(vis.pie(vis.displayData))
+
+        vis.rest = 0;
+        vis.displayColor = []
+        if (vis.key.length === 1) {
+            vis.rest = vis.data.total;
+            vis.displayColor = vis.grayColors.slice(2,4)
+        }
+        else {
+            vis.rest = vis.displayData.reduce((a,b) => parseInt(a)+parseInt(b))
+            vis.displayColor = vis.grayColors.slice(1,4)
+        }
 
         // Append paths
         vis.arcs.enter()
             .append("path")
             .attr("d", vis.arc)
-            .style("fill", function(d, index) { return vis.color(index); })
+            .attr("fill",function(d) {return vis.displayColor[d.index]})
             .merge(vis.arcs)
             .on('mouseover', function(event, d){
                 d3.select(this)
-                    .attr('stroke-width', '2px')
-                    .attr('stroke', 'black')
-                    .attr('fill', 'rgba(173,222,255,0.62)')
+                    .attr('fill', vis.platformColors[vis.data.platform])
 
                 vis.tooltip
                     .style("opacity", 1)
                     .style("left", event.pageX + 20 + "px")
                     .style("top", event.pageY + "px")
                     .html(`
-                <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 20px">
-                     <h3>Arc with index #${d.index}<h3>
-                     <h4> value: ${d.value}</h4>      
-                     <h4> startAngle: ${d.startAngle}</h4> 
-                     <h4> endAngle: ${d.endAngle}</h4>   
-                     <h4> data: ${JSON.stringify(d.data)}</h4>                         
+                <div style="border: thin solid grey; border-radius: 5px; background: #fcf6ef; padding: .5em">
+                     <p class="pie-tool-title"> ${vis.rankedKeys[d.index]} <\p>
+                     <p class="pie-tool-content"> Count: ${d.value}<br>      
+                     Percentage: ${(d.value / vis.rest * 100).toFixed(1)}%</p>                         
                 </div>`);
             })
             .on('mouseout', function(event, d){
                 d3.select(this)
-                    .attr('stroke-width', '0px')
-                    .attr("fill", d => d.data.color)
+                    .attr('fill', function(d) {return vis.displayColor[d.index]})
 
                 vis.tooltip
                     .style("opacity", 0)
@@ -133,5 +205,6 @@ class PieChart {
                     .style("top", 0)
                     .html(``);
             })
+
     }
 }
