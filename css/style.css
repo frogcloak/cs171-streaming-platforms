@@ -48,6 +48,13 @@ p {
     background-color: #fcf6ef;
 }
 
+.pie-legend-box {
+    border-radius: 0;
+    /*border: solid 1px #1f2c51;*/
+    background-color: #e6f4ff;
+
+}
+
 .form-title {
     font-family: "Bai Jamjuree", sans-serif;
     text-align: center;
@@ -118,6 +125,20 @@ hr {
     font-family: "Bai Jamjuree", sans-serif;
     font-size: 1.1em;
     color: #6a6a6a;
+}
+
+.d-legend-title {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: 1.1em;
+}
+
+.d-legend-content {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: 1em;
+}
+
+.pie-section-title h4 {
+    font-size: 3vh;
 }
 /*--------------------------------------------------------------*/
 

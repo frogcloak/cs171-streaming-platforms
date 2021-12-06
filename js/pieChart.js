@@ -1,11 +1,7 @@
-// let pieHeight = document.getElementById('typePrime').clientHeight * 0.8;
-// let rScale = d3.scaleLinear()
-//     .range([pieHeight * 0.5, pieHeight]);
-
 loadPie();
 
 function loadPie() {
-    d3.csv("data/all_count.csv"). then(csv=>{
+    d3.csv("https://github.com/frogcloak/cs171-streaming-platforms/blob/main/data/all_count.csv"). then(csv=>{
 
         // prepare data
         let data = csv
@@ -25,16 +21,18 @@ function loadPie() {
             Math.max.apply(Math, data.map(function(d) { return d.total; }))]);
 
         data.forEach(function(d,i) {
-                new PieChart(types[i], d, ["movie"], rankedID[i], rScale, "TV show");
+                new PieChart(types[i], d, ["Movie"], rankedID[i], rScale, "TV show");
                 new PieChart(ratings[i], d, ["G/TV-G", "PG/TV-PG", "PG-13/TV-14", "R/TV-MA"], rankedID[i], rScale, "");
             }
         )
 
+        new PieLabel("typeLegend", ["movie"], "Medium", "TV show");
+        new PieLabel("ratingLegend", ["G/TV-G", "PG/TV-PG", "PG-13/TV-14", "R/TV-MA"], "PG Rating", "");
+
+
 
     });
 }
-
-
 
 
 class PieChart {
@@ -85,7 +83,7 @@ class PieChart {
 
         // Pie chart settings
         let minScale = Math.min(vis.height, vis.width)
-        vis.rScale.range([minScale * 0.2, minScale * 0.39])
+        vis.rScale.range([minScale * 0.18, minScale * 0.42])
 
         vis.outerRadius = vis.rScale(vis.data.total);
         vis.innerRadius = 0; //TODO: double check
@@ -143,9 +141,6 @@ class PieChart {
             vis.displayData.push((vis.data.total - vis.data[vis.key[0]]).toString());
         }
 
-        // console.log(vis.displayData)
-        // console.log(vis.rankedKeys)
-
         vis.updateVis()
     }
 
@@ -170,14 +165,12 @@ class PieChart {
 
             for (let i=0; i<vis.key.length; i++) {
                 let d = vis.key[i];
-                console.log(d);
                 vis.displayColor[d] = vis.grayColors[i+1]
             }
 
         }
 
         vis.keytips = vis.key.concat([vis.not_lab])
-        console.log(vis.keytips)
 
         // Append paths
         vis.arcs.enter()
@@ -190,7 +183,6 @@ class PieChart {
             .on('mouseover', function(event, d){
                 d3.select(this)
                     .attr('fill', vis.platformColors[vis.data.platform])
-                console.log(d)
 
                 vis.tooltip
                     .style("opacity", 1)
@@ -217,4 +209,91 @@ class PieChart {
             })
 
     }
+}
+
+class PieLabel {
+    constructor(parentElement, key, title, not_lab) {
+        this.parentElement = parentElement;
+        this.key = key;
+        this.title = title;
+        this.not_lab = not_lab;
+        this.grayColors = ["#d9d9d9", "#bdbdbd", "#969696", "#636363", "#252525"];
+
+        this.initVis()
+    }
+
+    initVis() {
+        let vis = this;
+
+        // margin conventions
+        vis.margin = {top: 30, right: 5, bottom: 30, left: 5};
+        vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
+        vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
+
+        // init drawing area
+        vis.svg = d3.select("#" + vis.parentElement).append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 " + (vis.width + vis.margin.left + vis.margin.right) + " " + (vis.height + vis.margin.top + vis.margin.bottom))
+            .classed("svg-content-responsive", true)
+            .append("g")
+            .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+
+        // add legend
+        vis.legend = vis.svg.append("g")
+            .attr('class', 'legend')
+        // .attr('transform', `translate(${vis.margin.left}, ${vis.margin.top})`)
+
+        vis.legend.append("text")
+            .attr('class', 'd-legend-title')
+            .text(vis.title)
+            .attr('x', vis.width / 2 - vis.margin.right * 2)
+            .attr('text-anchor', 'middle');
+
+        vis.wrangleData();
+
+
+    }
+
+    wrangleData() {
+        let vis = this;
+
+        vis.displayColor = {}
+
+        if (vis.key.length === 1) {
+            vis.displayColor[vis.key[0]] = vis.grayColors[2];
+            vis.displayColor[vis.not_lab] = vis.grayColors[4];
+        }
+        else {
+
+            for (let i=0; i<vis.key.length; i++) {
+                let d = vis.key[i];
+                vis.displayColor[d] = vis.grayColors[i+1]
+            }
+
+        }
+
+        console.log(vis.displayColor)
+
+        vis.updateVis();
+    }
+
+    updateVis() {
+        let vis = this;
+
+        let iterator = 0;
+        for (const [key, value] of Object.entries(vis.displayColor)) {
+            vis.legend.append("rect")
+                .attr("x", -10).attr("y", vis.margin.top + iterator * 30)
+                .attr("height", 15).attr("width", 15)
+                .attr("fill", value)
+            vis.legend.append("text")
+                .attr("x", 10).attr("y", vis.margin.top + 10 + iterator * 30)
+                .attr("class", "d-legend-content")
+                .text(key)
+            iterator ++;
+        }
+    }
+
+
+
 }
