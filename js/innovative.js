@@ -1,22 +1,8 @@
 (async function test() {
 
-  var width = 800,
-      height = 1200;
+  var width = 600,
+      height = 800;
     let colors = ['#cf3038', '#ff7f0e', '#7f0eff', '#27d6d5', '#9467bd', '#398f6d','#398f6d' ,'#62bc51', '#e377c2', '#8f8b39', '#bcbd22', '#8f5639','#faa223' ,'#1f77b4', '#0279ad', '#2ca02c','#8f5639','#39858f','#6a6391','#b581c7', '#bb2b77']
-
-    // ['#cf3038', '#ff7f0e', '#7f0eff', '#27d6d5', '#9467bd', '#62bc51', '#e377c2', '#faa223', '#bcbd22', '#0279ad', '#1f77b4', '#ff7f0e', '#2ca02c']
-          //
-
-    // let colors = ['#cf3038', '#ff7f0e', '#7f0eff', '#27d6d5', '#9467bd', '#398f6d','#398f6d' ,'#62bc51', '#e377c2', '#8f8b39', '#bcbd22', '#8f5639','#faa223' ,'#1f77b4', '#0279ad', '#2ca02c','#8f5639','#39858f','#6a6391','#b581c7', '#bb2b77']
-
-    // colors = d3.scale.category10();
-
-  //var colors = [#E50914, #ff7f0e, #2ca02c, #d62728, #9467bd, #66aa33, #e377c2, #00A8E1, #bcbd22, #006e99, #1f77b4, #ff7f0e, #2ca02c]
-
-  //#E50914 -- Netflix RED
-    //#66aa33 -- Hulu Green
-    //#00A8E1 -- Prime Blue
-    // #393E8F -- Disney plus
 
 
   var setChar = 'ABCDEFGHIJKLMN',
@@ -82,8 +68,6 @@
 
     console.log(layout)
 
-  // .setsSize(x => (Math.log(x) ))
-  // .value(x => 1),
   svg = d3.select('svg')
       .attr('width', width)
       .attr('height', height),
@@ -101,8 +85,6 @@
               row.DisneyPlus = +row.DisneyPlus;
               // row.Runtime = parseFloat(row.Runtime);
               row.Rotten_Tomatoes = +row.Rotten_Tomatoes
-              // row.Rotten_Tomatoes = eval(row.Rotten_Tomatoes)*10
-              // row.IMDb = eval(row.IMDb)
 
               return row
 
@@ -165,35 +147,6 @@
 
       return newData
 
-
-    // var dataLength = test.dataLength(),
-    //     setLength = test.setLength(),
-    //     diff = dataLength - globalData.length;
-    //
-    // if (diff > 0) {
-    //
-    //   globalData = globalData.concat(d3.range(diff).map((d, i) => {
-    //     var l = Math.floor((Math.random() * setLength / 3) + 1),
-    //         set = [],
-    //         c,
-    //         i;
-    //     for (i = -1; ++i < l;) {
-    //       c = charFn(Math.floor((Math.random() * setLength)));
-    //       if (set.indexOf(c) == -1) {
-    //         set.push(c)
-    //       }
-    //     }
-    //     return {
-    //       set: set,
-    //       r: 8,
-    //       name: 'node_' + generator++
-    //     }
-    //   }))
-    // } else {
-    //   globalData.splice(0, -diff);
-    // }
-    //
-    // return globalData;
   }
 
   function refresh(data) {
@@ -256,61 +209,6 @@
           return d.d
         });
 
-
-
-      // var tooltip = d3.select("#venn").append("div")
-      //     .attr("class", "venntooltip");
-      //
-      // vennArea.selectAll("path")
-      //     .style("stroke-opacity", 0)
-      //     .style("stroke", "rgba(22,22,22,1)")
-      //     .style("stroke-width", 2)
-      //     .style("transform-origin", "50% 50%");
-      //
-      // vennArea.selectAll('path.venn-area-path').on('mouseenter', function () {
-      //     //
-      //     // alert("hello")
-      //
-      //     // tooltip.transition().duration(300).style("opacity", 1);
-      //
-      //     const node = d3.select(this).transition();
-      //     node.select('path').style('fill-opacity', 0.2);
-      //
-      //     // var selection = d3.select(this).transition("tooltip").duration(300);
-      //     // selection.select("path")
-      //     //     .style("fill-opacity", 1)
-      //     //     .style("stroke-opacity", 1)
-      //     //     .style("transform", "scale(1.01,1.01)")
-      //     //     .style("transform-origin", "50% 50%");
-      //   })
-      //     // .on("mouseout", function(d, i) {
-      //     //     tooltip.transition().duration(500).style("opacity", 0);
-      //     //     var selection = d3.select(this).transition("tooltip").duration(400);
-      //     //     selection.select("path")
-      //     //         .style("fill-opacity", d.sets.length == 1 ? 1 : 1)
-      //     //         .style("stroke-opacity", 0)
-      //     //         .style("transform", "scale(1,1)")
-      //     //         .style("transform-origin", "50% 50%");
-      //     //     // d3.select("#venn").selectAll("path").transition("opacity").duration(250).style("opacity", 1);
-      //     //     // d3.select(this).lower();
-      //     //
-      //     // });
-
-
-    //we need to rebind data so that parent data propagetes to child nodes (otherwise, updating parent has no effect on child.__data__ property)
-    // vennArea.selectAll("text.label").data(function(d) {
-    //   return [d];
-    // })
-    //     .text(function(d) {
-    //       return d.__key__;
-    //       console.log(d.__key__)
-    //     })
-    //     .attr("x", function(d) {
-    //       return d.center.x
-    //     })
-    //     .attr("y", function(d) {
-    //       return d.center.y
-    //     });
 
     //we need to rebind data so that parent data propagetes to child nodes (otherwise, updating parent has no effect on child.__data__ property)
     vennArea.selectAll('circle.inner').data(function(d) {
@@ -381,16 +279,6 @@
               tooltip.style("left", (d3.event.pageX) + "px")
                   .style("top", (d3.event.pageY - 28) + "px");
           })
-          // .on("mouseout", function(d, i) {
-          //     tooltip.transition().duration(20).style("opacity", 0);})
-          //     var selection = d3.select(this).transition("tooltip").duration(40);
-          //     selection.select("path")
-          //         .style("stroke-width", 3)
-          //         // .style("fill-opacity", d.sets.length == 1 ? .8 : 0)
-          //         .style("stroke-opacity", 1);
-          // });
-
-
 
 
       var linear = d3.scale.ordinal()
@@ -399,18 +287,16 @@
 
       svg.append("g")
           .attr("class", "legendLinear")
-          .attr("transform", "translate(20,250)");
+          .attr("transform", "translate(0,150)");
 
       var legendLinear = d3.legend.color()
-          .shapeWidth(60)
-          .shapeHeight(30)
+          .shapeWidth(50)
+          .shapeHeight(20)
           .orient('horizontal')
           .scale(linear);
 
       svg.select(".legendLinear")
           .call(legendLinear);
-
-
 
 
       points.transition()

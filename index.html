@@ -161,13 +161,6 @@
                 </div>
             </div>
 
-<!--            &lt;!&ndash;    Overall Comparison    &ndash;&gt;-->
-<!--            <div class="row section" id="overall">-->
-<!--                <div id="overall-compare-bg">-->
-<!--                    <img src="img/standing_Disney.png" height="761" width="500" alt="Placeholder"/>-->
-<!--                </div>-->
-<!--            </div>-->
-
             <!--    Pricing    -->
             <div class="row section" id="pricing">
                 <div style="height: 10vh">
@@ -234,52 +227,24 @@
                 <div style="height: 10vh">
                     <h1 class="page-title">Which platform has the most original platform?<hr></h1>
                 </div>
-                <div class = "row content-insight">
-                    <div  id="original-content">
+                <div class = "row content-insight" style="height: 90vh">
+                    <div class="col-3" id="original-content">
+                        <h3>Key Insights <i>(scroll in the graph to see the whole graph; hover to see details): </i></h3>
                         <p data-aos="fade-down" data-aos-duration="500" data-aos-delay="-1000" class="insight chart-des" style="margin-left: 1%; margin-top:5px">
                             1. Netflix has the highest number of content with top ratings.<br>
                             2. Amazon Prime and Hulu have the most overlapping shows<br>
                             3. Disney+ has the least content overlapping with other platforms<br>
-
                         </p>
+                    </div>
+                    <div class="col-9">
+                        <iframe id="inlineFrameExample"
+                                title="Original visualization" width="100%" height="90%" src="innovative.html">
+<!--                                width="300"-->
+<!--                                height="200"-->
+                        </iframe>
                     </div>
                 </div>
             </div>
-
-<!--            &lt;!&ndash;    Original Content    &ndash;&gt;-->
-<!--            <div class="row section" id="originalContent">-->
-<!--                <div>-->
-<!--                    <h1 class="page-title">Content Overlap between Platforms<hr></h1>-->
-<!--                </div>-->
-
-<!--                <h3> Among the four shows, Netflix has the highest number of content with top ratings. Amazon Prime and Hulu have the most overlapping shows compared to other platforms. Disney+ has the least content overlapping with other platforms. </h3>-->
-<!--                <form>-->
-<!--                    <div id="inputs">-->
-<!--                        <p>-->
-<!--                            <label for="dataLength">Rotten Tomatoes Value >= </label>-->
-<!--                            <input  min="40" max="100" step="5" type ="number"  type="range" name="dataLength" id="dataLength" value="" />-->
-<!--                            &lt;!&ndash;                <input type="number" min="10" step="10" max="600" name="dataLength" id="dataLength" value="" />&ndash;&gt;-->
-<!--                        </p>-->
-<!--                        <p>-->
-<!--                            <label for="setLength">Number of Circles</label>-->
-<!--                            <input  min="2" max="8" type="number" name="setLength" id="setLength" value="" />-->
-<!--                        </p>-->
-<!--                        <p>-->
-<!--                            <label for="circleOpacity">opacity for Circle</label>-->
-<!--                            <input  min="0.1" max="1" step ="0.1"  type="range" name="circleOpacity" id="circleOpacity" value="" />-->
-<!--                        </p>-->
-<!--                        <p>-->
-<!--                            <label for="innerOpacity">opacity for inner Circle</label>-->
-<!--                            <input  min="0" max="1" step ="0.1" type="range" name="innerOpacity" id="innerOpacity" value="" />-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </form>-->
-
-<!--                <svg id="venn">-->
-<!--                </svg>-->
-<!--                &lt;!&ndash;    <script src="https://d3js.org/d3.v4.js">&ndash;&gt;-->
-
-<!--            </div>-->
 
             <!--    Original Content Google Trends    -->
             <div class="row section" id="googleTrends">
@@ -373,8 +338,8 @@
     <script src="js/lineVisSubscriber.js"></script>
     <script src="js/googleTrendsMain.js"></script>
     <script src="js/lineVisTrends.js"></script>
-        <script  src="js/pricingMain.js"></script>
-        <script  src="js/pricingVis.js"></script>
+    <script  src="js/pricingMain.js"></script>
+    <script  src="js/pricingVis.js"></script>
 
 
 

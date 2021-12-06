@@ -11,12 +11,25 @@
     border-radius: 8px;
     opacity: 0;
 }
-
-p {
-    font-size : 30px;
-
+.label {
+    font-size: 0.8em;
 }
 
-h1{
-    font-size : 20px;
+#survey-result p {
+    color: #6a6a6a;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.boxed-text.chart-des {
+    border-radius: 0em;
+    border: none;
+    text-align: left;
+    align-self: center;
+    margin-top: 10%;
+    padding-left:.5em;
+    padding-right:.3em;
+    padding-bottom: .5em;
+    font-size: 1em;
+    background-color: #ebd7cb;
 }
