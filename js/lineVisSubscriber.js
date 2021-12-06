@@ -54,7 +54,7 @@ class LineVis_subscriber {
                 .attr('y', 90)
                 .attr('width', 600)
                 .attr('height', 100)
-                .attr("xlink:href", "https://github.com/frogcloak/cs171-streaming-platforms/blob/main/img/up-trend.png")
+                .attr("xlink:href", "/img/up-trend.png")
 
             // drawing line chart effect help from: http://bl.ocks.org/markmarkoh/8700606
             /* Add 'curtain' rectangle to hide entire graph */
