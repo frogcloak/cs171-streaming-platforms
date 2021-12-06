@@ -272,8 +272,6 @@ class PieLabel {
 
         }
 
-        console.log(vis.displayColor)
-
         vis.updateVis();
     }
 
