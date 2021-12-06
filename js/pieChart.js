@@ -1,7 +1,7 @@
 loadPie();
 
 function loadPie() {
-    d3.csv("https://github.com/frogcloak/cs171-streaming-platforms/blob/main/data/all_count.csv"). then(csv=>{
+    d3.csv("data/all_count.csv"). then(csv=>{
 
         // prepare data
         let data = csv
