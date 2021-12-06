@@ -65,7 +65,7 @@ class LineVis_subscriber {
                 .attr('width', 100)
                 .attr('class', 'curtain-img')
                 .attr('transform', 'rotate(180)')
-                .style('fill', '#ffffff')
+                .style('fill', '#fffdf7')
 
             /* Create a shared transition for anything we're animating */
             this.t = this.svg.transition()
@@ -359,7 +359,7 @@ class LineVis_subscriber {
             .attr('width', vis.width + 10)
             .attr('class', 'curtain')
             .attr('transform', 'rotate(180)')
-            .style('fill', '#ffffff')
+            .style('fill', '#fffdf7')
 
         /* Create a shared transition for anything we're animating */
         vis.t = vis.svg.transition()

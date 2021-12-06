@@ -1,0 +1,156 @@
+date,popularity,day,show,platform,show_name
+2021-09-17,3,1,squid game,netflix,squid
+2021-09-18,12,2,squid game,netflix,squid
+2021-09-19,17,3,squid game,netflix,squid
+2021-09-20,18,4,squid game,netflix,squid
+2021-09-21,25,5,squid game,netflix,squid
+2021-09-22,31,6,squid game,netflix,squid
+2021-09-23,37,7,squid game,netflix,squid
+2021-09-24,44,8,squid game,netflix,squid
+2021-09-25,62,9,squid game,netflix,squid
+2021-09-26,73,10,squid game,netflix,squid
+2021-09-27,65,11,squid game,netflix,squid
+2021-09-28,64,12,squid game,netflix,squid
+2021-09-29,68,13,squid game,netflix,squid
+2021-09-30,74,14,squid game,netflix,squid
+2021-10-01,81,15,squid game,netflix,squid
+2021-10-02,98,16,squid game,netflix,squid
+2021-10-03,100,17,squid game,netflix,squid
+2021-10-04,79,18,squid game,netflix,squid
+2021-10-05,80,19,squid game,netflix,squid
+2021-10-06,77,20,squid game,netflix,squid
+2021-10-07,75,21,squid game,netflix,squid
+2021-10-08,74,22,squid game,netflix,squid
+2021-10-09,88,23,squid game,netflix,squid
+2021-10-10,84,24,squid game,netflix,squid
+2021-10-11,67,25,squid game,netflix,squid
+2021-10-12,60,26,squid game,netflix,squid
+2021-10-13,58,27,squid game,netflix,squid
+2021-10-14,56,28,squid game,netflix,squid
+2021-10-15,54,29,squid game,netflix,squid
+2021-10-16,62,30,squid game,netflix,squid
+2021-10-17,61,31,squid game,netflix,squid
+2019-11-12,21,1,the mandalorian,disney+,mando
+2019-11-13,28,2,the mandalorian,disney+,mando
+2019-11-14,18,3,the mandalorian,disney+,mando
+2019-11-15,20,4,the mandalorian,disney+,mando
+2019-11-16,26,5,the mandalorian,disney+,mando
+2019-11-17,24,6,the mandalorian,disney+,mando
+2019-11-18,19,7,the mandalorian,disney+,mando
+2019-11-19,17,8,the mandalorian,disney+,mando
+2019-11-20,15,9,the mandalorian,disney+,mando
+2019-11-21,14,10,the mandalorian,disney+,mando
+2019-11-22,21,11,the mandalorian,disney+,mando
+2019-11-23,25,12,the mandalorian,disney+,mando
+2019-11-24,22,13,the mandalorian,disney+,mando
+2019-11-25,16,14,the mandalorian,disney+,mando
+2019-11-26,14,15,the mandalorian,disney+,mando
+2019-11-27,14,16,the mandalorian,disney+,mando
+2019-11-28,14,17,the mandalorian,disney+,mando
+2019-11-29,20,18,the mandalorian,disney+,mando
+2019-11-30,25,19,the mandalorian,disney+,mando
+2019-12-01,20,20,the mandalorian,disney+,mando
+2019-12-02,17,21,the mandalorian,disney+,mando
+2019-12-03,13,22,the mandalorian,disney+,mando
+2019-12-04,13,23,the mandalorian,disney+,mando
+2019-12-05,12,24,the mandalorian,disney+,mando
+2019-12-06,19,25,the mandalorian,disney+,mando
+2019-12-07,21,26,the mandalorian,disney+,mando
+2019-12-08,18,27,the mandalorian,disney+,mando
+2019-12-09,12,28,the mandalorian,disney+,mando
+2019-12-10,10,29,the mandalorian,disney+,mando
+2019-12-11,10,30,the mandalorian,disney+,mando
+2019-12-12,9,31,the mandalorian,disney+,mando
+2017-04-26,5,1,the handmaid's tale,hulu,handmaid
+2017-04-27,8,2,the handmaid's tale,hulu,handmaid
+2017-04-28,6,3,the handmaid's tale,hulu,handmaid
+2017-04-29,6,4,the handmaid's tale,hulu,handmaid
+2017-04-30,7,5,the handmaid's tale,hulu,handmaid
+2017-05-01,7,6,the handmaid's tale,hulu,handmaid
+2017-05-02,4,7,the handmaid's tale,hulu,handmaid
+2017-05-03,5,8,the handmaid's tale,hulu,handmaid
+2017-05-04,5,9,the handmaid's tale,hulu,handmaid
+2017-05-05,5,10,the handmaid's tale,hulu,handmaid
+2017-05-06,4,11,the handmaid's tale,hulu,handmaid
+2017-05-07,6,12,the handmaid's tale,hulu,handmaid
+2017-05-08,5,13,the handmaid's tale,hulu,handmaid
+2017-05-09,4,14,the handmaid's tale,hulu,handmaid
+2017-05-10,4,15,the handmaid's tale,hulu,handmaid
+2017-05-11,5,16,the handmaid's tale,hulu,handmaid
+2017-05-12,4,17,the handmaid's tale,hulu,handmaid
+2017-05-13,4,18,the handmaid's tale,hulu,handmaid
+2017-05-14,4,19,the handmaid's tale,hulu,handmaid
+2017-05-15,3,20,the handmaid's tale,hulu,handmaid
+2017-05-16,3,21,the handmaid's tale,hulu,handmaid
+2017-05-17,3,22,the handmaid's tale,hulu,handmaid
+2017-05-18,4,23,the handmaid's tale,hulu,handmaid
+2017-05-19,3,24,the handmaid's tale,hulu,handmaid
+2017-05-20,3,25,the handmaid's tale,hulu,handmaid
+2017-05-21,4,26,the handmaid's tale,hulu,handmaid
+2017-05-22,3,27,the handmaid's tale,hulu,handmaid
+2017-05-23,3,28,the handmaid's tale,hulu,handmaid
+2017-05-24,3,29,the handmaid's tale,hulu,handmaid
+2017-05-25,4,30,the handmaid's tale,hulu,handmaid
+2017-05-26,3,31,the handmaid's tale,hulu,handmaid
+2018-09-01,12,1,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-02,11,2,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-03,10,3,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-04,7,4,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-05,6,5,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-06,5,6,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-07,5,7,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-08,6,8,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-09,6,9,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-10,4,10,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-11,3,11,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-12,3,12,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-13,3,13,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-14,3,14,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-15,4,15,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-16,4,16,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-17,3,17,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-18,2,18,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-19,2,19,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-20,2,20,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-21,2,21,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-22,3,22,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-23,3,23,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-24,2,24,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-25,2,25,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-26,1,26,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-27,1,27,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-28,1,28,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-29,1,29,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-09-30,2,30,Tom Clancy's Jack Ryan,amazon prime,ryan
+2018-10-01,1,31,Tom Clancy's Jack Ryan,amazon prime,ryan
+2020-11-26,1,1,The Flight Attendant,hbo max,flight
+2020-11-27,3,2,The Flight Attendant,hbo max,flight
+2020-11-28,3,3,The Flight Attendant,hbo max,flight
+2020-11-29,2,4,The Flight Attendant,hbo max,flight
+2020-11-30,2,5,The Flight Attendant,hbo max,flight
+2020-12-01,1,6,The Flight Attendant,hbo max,flight
+2020-12-02,1,7,The Flight Attendant,hbo max,flight
+2020-12-03,2,8,The Flight Attendant,hbo max,flight
+2020-12-04,2,9,The Flight Attendant,hbo max,flight
+2020-12-05,2,10,The Flight Attendant,hbo max,flight
+2020-12-06,2,11,The Flight Attendant,hbo max,flight
+2020-12-07,1,12,The Flight Attendant,hbo max,flight
+2020-12-08,1,13,The Flight Attendant,hbo max,flight
+2020-12-09,1,14,The Flight Attendant,hbo max,flight
+2020-12-10,2,15,The Flight Attendant,hbo max,flight
+2020-12-11,2,16,The Flight Attendant,hbo max,flight
+2020-12-12,2,17,The Flight Attendant,hbo max,flight
+2020-12-13,2,18,The Flight Attendant,hbo max,flight
+2020-12-14,2,19,The Flight Attendant,hbo max,flight
+2020-12-15,1,20,The Flight Attendant,hbo max,flight
+2020-12-16,1,21,The Flight Attendant,hbo max,flight
+2020-12-17,2,22,The Flight Attendant,hbo max,flight
+2020-12-18,3,23,The Flight Attendant,hbo max,flight
+2020-12-19,3,24,The Flight Attendant,hbo max,flight
+2020-12-20,2,25,The Flight Attendant,hbo max,flight
+2020-12-21,2,26,The Flight Attendant,hbo max,flight
+2020-12-22,1,27,The Flight Attendant,hbo max,flight
+2020-12-23,1,28,The Flight Attendant,hbo max,flight
+2020-12-24,1,29,The Flight Attendant,hbo max,flight
+2020-12-25,1,30,The Flight Attendant,hbo max,flight
+2020-12-26,1,31,The Flight Attendant,hbo max,flight

@@ -12,7 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple|anaglyph">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Poppins&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 
 
     <!-- CSS libraries -->
@@ -46,23 +48,28 @@
 
             <!--    Intro text    -->
             <div class="row section" id="intro">
-                <div class="text-left buffer">
-                    <p data-aos="fade-down" data-aos-duration="500" data-aos-delay="-1000" class="boxed-text">
+
+                <h1 class="page-title">Streaming Platform Pop Quiz: How Much Do You Know?<hr></h1>
+                <div data-aos="fade-down" data-aos-duration="500" data-aos-delay="-1000" class="text-left buffer boxed-text">
+                    <p>
                         New streaming platforms seem to be launching every few months in the past two to three years.
                         Back in the day, one Netflix subscription would allow a user to watch most of the streamable
                         content on the internet. It is no longer the case now. As more platforms are launched, access
                         to existing IPs (intellectual properties) are locked behind different paywalls, and new
-                        original IPs are being created each year. What does it mean for the industry and for the
-                        consumer? Does competition in this business really lead to benefits to the consumers? Most
-                        importantly, as consumers of streaming services ourselves, which platform(s) should we
-                        subscribe to now?<br>
+                        original IPs are being created each year.
+                        <ul>
+                    <li>What does it mean for the industry and for the  consumer? </li>
+                    <li>Does competition in this business really lead to benefits to the consumers?</li>
+                    <li>Most importantly, as consumers of streaming services ourselves, which platform(s) should we
+                        subscribe to now?</li>
+                </ul>
                     </p>
                 </div>
             </div>
 
             <!--    Survey    -->
             <div class="row section" id="survey">
-                <div class="form-title">Streaming Platform Pop Quiz: How Much Do You Know?<hr></div>
+                <h1 class="page-title">Streaming Platform Pop Quiz: How Much Do You Know?<hr></h1>
                 <div class="row">
                     <div class="col" style="margin-left: 2.5%" id="q1" data-aos="fade-in"></div>
                     <div class="col" id="q2" data-aos="fade-in"></div>
@@ -83,15 +90,14 @@
                         <div class="col-10 offset-1" style="">
 
                             <!-- HEADING -->
-                            <div class="row d-flex justify-content-center" style="height: 10vh; padding: 0;">
-                                <div style="height: 2vh"></div>
+                            <div class="row d-flex justify-content-center">
                                 <div class="align-self-center">
-                                    <h1>Which platform has the most subscribers?</h1>
+                                    <h1 class="page-title">Which platform has the most subscribers?<hr></h1>
                                 </div>
                             </div>
                             <!-- CONTENT -->
 
-                            <div class="row justify-content-center" style="height: 50vh; background: white; padding: 0;">
+                            <div class="row justify-content-center">
                                 <div class="col col-6">
                                     <div id="insightsData"
                                          style="height: 100%; width:100%;">
@@ -128,15 +134,15 @@
 <!--            </div>-->
 
             <!--    Pricing    -->
-            <div class="row section" id="pricing">
-                <div id="pricing-bg">
-                    <img src="img/tapping_Hulu.gif" height="480" width="256" alt="Placeholder"/></div>
-            </div>
+<!--            <div class="row section" id="pricing">-->
+<!--                <div id="pricing-bg">-->
+<!--                    <img src="img/tapping_Hulu.gif" height="480" width="256" alt="Placeholder"/></div>-->
+<!--            </div>-->
 
             <!--    Content dashboard    -->
             <div class="row section" id="contentDashboard">
                 <div style="height: 10vh">
-                    <div class="form-title">Overview of Platform Content<hr></div>
+                    <h1 class="page-title">Overview of Platform Content<hr></h1>
                 </div>
                 <div style="height: 2vh"></div>
                 <div class="row" id="typePie" style="height: 40vh">
@@ -187,9 +193,70 @@
                 </div>
             </div>
 
+            <!--    Original Content    -->
+
+            <!--    Original Content Google Trends    -->
+            <div class="row section" id="googleTrends">
+                <!-- WRAPPER -->
+                <div class="container-fluid" style="height: 100vh; padding-top: 1vh">
+                    <div class="row">
+                        <div class="col-10 offset-1" style="">
+
+                            <!-- HEADING -->
+                            <div class="row d-flex justify-content-center">
+                                <div class="align-self-center">
+                                    <h1 class="page-title">Which Platforms have the most popular original shows?<hr></h1>
+                                </div>
+                            </div>
+                            <!-- CONTENT -->
+
+                            <div class="row justify-content-center">
+                                <div class="col col-7">
+                                    <div id="lineDivTrends"
+                                         style="height: 100%; width:100%;">
+                                    </div>
+                                </div>
+                                <div class="col col-5 aux-box">
+                                    <div>
+                                        <div class="aux-data" id="showPlatformImage" >
+                                            <img src="img/netflix.png">
+                                        </div>
+                                        <div class="aux-data" id="showTitle">
+                                            <h2>Squid Game</h2>
+                                        </div>
+                                        <div class="aux-data" id="showSeason">
+                                            <h3>Season 1</h3>
+                                        </div>
+                                        <div class="aux-data" id="showRottenTomatoes">
+                                            <h3><img src="img/certified-fresh.png">
+                                                Rotten Tomatoes Score: 94/100
+                                            </h3>
+                                        </div>
+                                        <div class="aux-data" id="showSummary">
+                                            <h4>
+                                                Show Summary: Hundreds of cash-strapped contestants accept an invitation to compete in children's games for a tempting prize, but the stakes are deadly.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="height: 35vh; background: white; padding: 0;">
+                                <div class="col netflix-poster"><img class="img-fluid poster" id = "squidgame" src="img/squid_game.jpeg" alt="Squid Game Poster" width=180 height=180></div>
+                                <div class="col prime-poster"><img class="img-fluid poster" id = "ryan" src="img/ryan.jpeg" alt="Jack Ryan Poster" width=180 height=180></div>
+                                <div class="col hulu-poster"><img class="img-fluid poster" id = "handmaid" src="img/handmaids_tale.jpg" alt="Handmaid's Tale" width=180 height=140></div>
+                                <div class="col disney-poster"><img class="img-fluid poster" id = "mando" src="img/mandalorian.jpeg" alt="The Mandalorian" width=180 height=180></div>
+                                <div class="col hbo-poster"><img class="img-fluid poster" id = "flight" src="img/flight_attendant.jpeg" alt="The Flight Attendant" width=180 height=140></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
             <!--    Recommendation    -->
             <div class="row section" id="recommendation">
-                <div class="form-title">Finding the Right Streaming Platform for You<hr></div>
+                <h1 class="page-title">Finding the Right Streaming Platform for You<hr></h1>
                 <div class="row" style="height: 40vh">
                     <div class="col"></div>
                     <div class="col-4" style="margin-left: 2.5%" id="rec-q" data-aos="fade-in"></div>
@@ -238,6 +305,8 @@
     <script src="js/pieChart.js"></script>
     <script src="js/subscriberMain.js"></script>
     <script src="js/lineVisSubscriber.js"></script>
+    <script src="js/googleTrendsMain.js"></script>
+    <script src="js/lineVisTrends.js"></script>
 
     <!-- Initialize Fullpage stepper-->
     <script>
