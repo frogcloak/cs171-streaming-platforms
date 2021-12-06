@@ -313,3 +313,25 @@ h2.rec-text {
     background-color: #f7ecde;
     border-color: #f8f9fa;
 }
+
+.venntooltip {
+    font-size : 12px;
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 60px;
+    background: #333;
+    color: #fff;
+    padding: 2px;
+    border: 0px;
+    border-radius: 8px;
+    opacity: 0;
+}
+
+.pricing-table{
+    padding-top: 20px;
+}
+
+.content-insight{
+    padding:50px
+}
