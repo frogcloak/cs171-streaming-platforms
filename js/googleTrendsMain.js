@@ -53,5 +53,5 @@ function generateHTML(auxData, index){
     document.getElementById("showPlatformImage").innerHTML = `<img src=\"/img/${currShow.image}\">`
     document.getElementById("showTitle").innerHTML = `<h2>${currShow.title}</h2>`
     document.getElementById("showRottenTomatoes").innerHTML = `<h3><img src=\"/img/certified-fresh.png\">Rotten Tomatoes Score: ${currShow.rotten_tomatoes}/100</h3>`
-    document.getElementById("showSummary").innerHTML = `<h4>Show Summary: ${currShow.summary}</h4>`
+    document.getElementById("showSummary").innerHTML = `<h4>${currShow.summary}</h4>`
 }

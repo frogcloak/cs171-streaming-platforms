@@ -31,6 +31,10 @@ h3{
     font-family: "Roboto";
 }
 
+b{
+    font-family: Roboto;
+}
+
 .buffer {
     margin-left: 4%;
     margin-right: 4%;
@@ -52,13 +56,13 @@ h3{
 
 #fp-nav ul:hover .fp-tooltip{
     color: #6a6a6a;
-    font-family: "Bai Jamjuree", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .boxed-text {
     border-radius: 1.6em;
     /*border: 3px solid #b58659;*/
-    background-color: #e1c7b7;
+    background-color: #ebd7cb;
     padding: .9em;
     font-size: 1.3em;
 }
@@ -73,13 +77,13 @@ h3{
     padding-right:.3em;
     padding-bottom: .5em;
     font-size: 1em;
-    background-color: #fcf6ef;
+    background-color: #ebd7cb;
 }
 
 .pie-legend-box {
-    border-radius: 0;
+    border-radius: 0.4em;
     /*border: solid 1px #1f2c51;*/
-    background-color: #e6f4ff;
+    background-color:#f7ecde;
 
 }
 
@@ -114,9 +118,22 @@ hr {
 
 #survey-msg {
     border-radius: 1.6em;
-    border: 3px solid #b58659;
-    padding: .2em;
-    background-color: #fcf6ef;
+    padding: 1em;
+    background-color: #ebd7cb;
+}
+
+.rec-result {
+    margin:auto;
+    border-radius: 1.6em;
+    padding: 2em;
+    width:50%;
+    background-color: #ebd7cb;
+}
+
+h2.rec-text {
+    color: black;
+    font-size: 1.25rem;
+    text-align: center;
 }
 
 .btn-primary {
@@ -134,34 +151,34 @@ hr {
 }
 
 .pie-title {
-    font-size: 1em;
+    font-size: 1.05em;
 }
 
 .pie-tool-title {
-    font-family: "Bai Jamjuree", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.3em;
     font-weight: bold;
 }
 
 .pie-tool-content {
-    font-family: "Bai Jamjuree", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.1em;
     color: #6a6a6a;
 }
 
 .d-legend-title {
-    font-family: "Bai Jamjuree", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.1em;
 }
 
 .d-legend-content {
-    font-family: "Bai Jamjuree", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1em;
 }
 
-.pie-section-title h4 {
-    font-size: 3vh;
-}
+/*.pie-section-title h4 {*/
+/*    font-size: 3vh;*/
+/*}*/
 
 #rec-q1 {
     -webkit-transition: opacity 1s ease-in-out;
@@ -188,7 +205,7 @@ hr {
     margin: 7px;
 }
 
-.insight:hover{
+.insight.subscriber:hover{
     color: #000;
     background-color: #fffdf7;
     border-color: #fffdf7;
@@ -272,7 +289,7 @@ hr {
 
 #showPlatformImage{
     height: 30px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 #showPlatformImage img{
@@ -293,6 +310,6 @@ hr {
     font-size: 1rem;
     border-radius: 1rem;
     color: #000;
-    background-color: #f0f1f2;
+    background-color: #f7ecde;
     border-color: #f8f9fa;
 }

@@ -96,7 +96,7 @@ class PieChart {
         // add title
         if (vis.title !== "") {
             vis.svg.append('g')
-                .attr('class', 'title pie-title')
+                .attr('class', 'pie-title')
                 .append('text')
                 .text(vis.data.platform)
                 .attr('transform', `translate(${vis.width / 2}, 20)`)

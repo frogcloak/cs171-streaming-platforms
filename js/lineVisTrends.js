@@ -343,7 +343,7 @@ class LineVisTrends {
             .attr("fill", "black")
             .attr("x", vis.width - 10)
             .attr("y", vis.height + 30)
-            .text("Days Since Release")
+            .text("Number of Days After Release")
 
         //y axis text
         vis.svg.append("text")
