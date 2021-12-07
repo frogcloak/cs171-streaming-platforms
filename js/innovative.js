@@ -78,7 +78,7 @@
 
   async function generateData() {
       const rawData = await new Promise((resolve, reject) => {
-          d3.csv("../data/allplatforms.csv", row => {
+          d3.csv("data/allplatforms.csv", row => {
               row.Hulu = +row.Hulu;
               row.Prime_Video = +row.Prime_Video;
               row.Netflix = +row.Netflix;
